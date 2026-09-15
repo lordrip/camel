@@ -47,6 +47,10 @@
         <!-- camel -->
         <dependency>
             <groupId>org.apache.camel</groupId>
+            <artifactId>camel-jbang-export</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.camel</groupId>
             <artifactId>camel-dataweave</artifactId>
         </dependency>
         <dependency>
@@ -160,11 +164,6 @@
         </dependency>
 
         <!-- template engine for code generation -->
-        <dependency>
-            <groupId>org.freemarker</groupId>
-            <artifactId>freemarker</artifactId>
-            <version>${freemarker-version}</version>
-        </dependency>
 
         <!-- test dependencies -->
         <dependency>

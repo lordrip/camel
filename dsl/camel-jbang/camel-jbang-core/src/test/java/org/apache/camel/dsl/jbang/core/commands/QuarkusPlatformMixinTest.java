@@ -18,11 +18,11 @@ package org.apache.camel.dsl.jbang.core.commands;
 
 import java.util.Properties;
 
-import org.apache.camel.dsl.jbang.core.common.QuarkusHelper;
-import org.apache.camel.dsl.jbang.core.common.RuntimeType;
+import org.apache.camel.dsl.jbang.export.common.QuarkusHelper;
+import org.apache.camel.dsl.jbang.export.common.RuntimeType;
 import org.junit.jupiter.api.Test;
 
-import static org.apache.camel.dsl.jbang.core.common.CamelJBangConstants.QUARKUS_EXTENSION_REGISTRY_BASE_URI;
+import static org.apache.camel.dsl.jbang.export.common.CamelJBangConstants.QUARKUS_EXTENSION_REGISTRY_BASE_URI;
 import static org.assertj.core.api.Assertions.assertThat;
 
 class QuarkusPlatformMixinTest {

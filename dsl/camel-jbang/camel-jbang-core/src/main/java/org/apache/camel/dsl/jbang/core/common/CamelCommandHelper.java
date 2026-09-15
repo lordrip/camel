@@ -70,9 +70,9 @@ public final class CamelCommandHelper {
                 try {
                     s = Jsoner.unescape(s);
                     if (loggingColor) {
-                        s = XmlHelper.colorPrint(s, 2, true);
+                        s = XmlPrinter.colorPrint(s, 2, true);
                     } else {
-                        s = XmlHelper.prettyPrint(s, 2);
+                        s = XmlPrinter.prettyPrint(s, 2);
                     }
                 } catch (Exception e) {
                     // ignore as not xml

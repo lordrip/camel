@@ -34,7 +34,7 @@ import java.util.regex.Pattern;
 import com.networknt.schema.Error;
 import org.apache.camel.catalog.CamelCatalog;
 import org.apache.camel.catalog.DefaultCamelCatalog;
-import org.apache.camel.dsl.jbang.core.common.CatalogLoader;
+import org.apache.camel.dsl.jbang.export.common.CatalogLoader;
 import org.apache.camel.dsl.yaml.validator.YamlValidator;
 
 import static org.apache.camel.dsl.jbang.core.commands.ai.JavaChecks.JAVA_CLASS_PATTERN;

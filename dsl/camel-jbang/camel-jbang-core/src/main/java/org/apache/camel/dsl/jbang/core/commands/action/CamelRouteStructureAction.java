@@ -26,9 +26,9 @@ import java.util.Objects;
 
 import org.apache.camel.dsl.jbang.core.commands.CamelJBangMain;
 import org.apache.camel.dsl.jbang.core.commands.Run;
-import org.apache.camel.dsl.jbang.core.common.CamelJBangConstants;
 import org.apache.camel.dsl.jbang.core.common.CommandLineHelper;
-import org.apache.camel.dsl.jbang.core.common.PathUtils;
+import org.apache.camel.dsl.jbang.export.common.CamelJBangConstants;
+import org.apache.camel.dsl.jbang.export.common.PathUtils;
 import org.apache.camel.main.KameletMain;
 import org.apache.camel.support.PatternHelper;
 import org.apache.camel.util.FileUtil;

@@ -27,8 +27,8 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Stack;
 
-import org.apache.camel.dsl.jbang.core.common.CamelJBangConstants;
 import org.apache.camel.dsl.jbang.core.common.CommandLineHelper;
+import org.apache.camel.dsl.jbang.export.common.CamelJBangConstants;
 import org.apache.camel.main.KameletMain;
 import org.apache.camel.util.IOHelper;
 import org.apache.camel.util.StopWatch;

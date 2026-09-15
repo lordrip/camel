@@ -676,6 +676,30 @@ polyglot `Value` itself needs to work with these types instead.
 
 === camel-jbang
 
+A new `camel-jbang-export` module has been extracted from `camel-jbang-core`. It holds the picocli-free
+helpers that the project export needs, so that tooling embedding the export can depend on it without
+pulling in the Camel CLI's command-line layer. `camel-jbang-core` depends on the new module, so the
+`camel` CLI itself is unaffected.
+
+The following classes moved from `org.apache.camel.dsl.jbang.core.common` to
+`org.apache.camel.dsl.jbang.export.common`:
+
+`CamelJBangConstants`, `CatalogLoader`, `CompressionHelper`, `GenAiDependencyHelper`, `GistHelper`,
+`GitHubHelper`, `PathUtils`, `PluginExporter`, `Printer`, `PropertyResolver`, `QuarkusHelper`,
+`RuntimeType`, `RuntimeUtil`, `Source`, `SourceHelper`, `SourceScheme`, `StringPrinter`,
+`TemplateHelper`, `VersionHelper` and `XmlHelper`.
+
+`ExportHelper` moved from `org.apache.camel.dsl.jbang.core.commands` to
+`org.apache.camel.dsl.jbang.export.commands`.
+
+Out-of-tree Camel JBang plugins that import any of these types need to update their imports and add a
+dependency on `camel-jbang-export`. No behaviour and no CLI option changed.
+
+`XmlHelper.prettyPrint` and `XmlHelper.colorPrint` did not move: they depend on jline, which
+`camel-jbang-export` does not pull in. They are now on
+`org.apache.camel.dsl.jbang.core.common.XmlPrinter` in `camel-jbang-core`. `XmlHelper` keeps
+`createDocumentBuilderFactory`.
+
 The `--runtime` option of `camel run` has a new default value `jbang`, which is the existing in-process
 behaviour (the integration runs inside the Camel CLI JVM). The `main` (or `camel-main`) runtime now
 behaves like `spring-boot` and `quarkus`: the integration is exported to a temporary Camel Main project,

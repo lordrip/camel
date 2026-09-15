@@ -29,7 +29,7 @@ import io.quarkiverse.mcp.server.ToolCallException;
 import org.apache.camel.dsl.jbang.core.commands.catalog.KameletCatalogHelper;
 import org.apache.camel.dsl.jbang.core.commands.catalog.KameletModel;
 import org.apache.camel.dsl.jbang.core.commands.catalog.KameletOptionModel;
-import org.apache.camel.dsl.jbang.core.common.VersionHelper;
+import org.apache.camel.dsl.jbang.export.common.VersionHelper;
 
 /**
  * MCP Tools for querying the Kamelet Catalog using Quarkus MCP Server.

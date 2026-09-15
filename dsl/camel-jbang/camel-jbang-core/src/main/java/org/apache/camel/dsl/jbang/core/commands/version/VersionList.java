@@ -53,12 +53,13 @@ import org.apache.camel.dsl.jbang.core.commands.CamelJBangMain;
 import org.apache.camel.dsl.jbang.core.commands.MavenResolverMixin;
 import org.apache.camel.dsl.jbang.core.commands.QuarkusExtensionRegistryMixin;
 import org.apache.camel.dsl.jbang.core.common.CommandLineHelper;
-import org.apache.camel.dsl.jbang.core.common.QuarkusHelper;
 import org.apache.camel.dsl.jbang.core.common.RuntimeCompletionCandidates;
-import org.apache.camel.dsl.jbang.core.common.RuntimeType;
 import org.apache.camel.dsl.jbang.core.common.RuntimeTypeConverter;
-import org.apache.camel.dsl.jbang.core.common.VersionHelper;
 import org.apache.camel.dsl.jbang.core.model.VersionListDTO;
+import org.apache.camel.dsl.jbang.export.common.QuarkusHelper;
+import org.apache.camel.dsl.jbang.export.common.QuarkusHelper.CamelAndRuntimeVersions;
+import org.apache.camel.dsl.jbang.export.common.RuntimeType;
+import org.apache.camel.dsl.jbang.export.common.VersionHelper;
 import org.apache.camel.main.KameletMain;
 import org.apache.camel.main.download.MavenDependencyDownloader;
 import org.apache.camel.tooling.maven.RepositoryResolver;
@@ -183,7 +184,7 @@ public class VersionList extends CamelCommand {
         } else {
             versions = Stream.of();
         }
-        versions = versions.filter(v -> acceptVersion(v.camelVersion));
+        versions = versions.filter(v -> acceptVersion(v.camelVersion()));
 
         CamelCatalog catalog = new DefaultCamelCatalog();
         List<ReleaseModel> releases = RuntimeType.quarkus == runtime ? catalog.camelQuarkusReleases() : catalog.camelReleases();
@@ -412,7 +413,7 @@ public class VersionList extends CamelCommand {
     private Stream<Row> filterVersions(Stream<CamelAndRuntimeVersions> versions, List<ReleaseModel> releases) throws Exception {
         List<Row> rows = new ArrayList<>();
         versions
-                .map(CamelAndRuntimeVersions::toRow)
+                .map(VersionList::toRow)
                 .peek(row -> row.setValues(findReleaseModel(row, releases)))
                 .filter(row -> filterDates(row.releaseDate))
                 .forEach(rows::add);
@@ -609,11 +610,8 @@ public class VersionList extends CamelCommand {
         return null;
     }
 
-    public static record CamelAndRuntimeVersions(String camelVersion, String runtimeVersion, String camelQuarkusVersion) {
-
-        public Row toRow() {
-            return new Row(camelVersion, runtimeVersion, camelQuarkusVersion);
-        }
+    private static Row toRow(CamelAndRuntimeVersions v) {
+        return new Row(v.camelVersion(), v.runtimeVersion(), v.camelQuarkusVersion());
     }
 
     private static class Row {

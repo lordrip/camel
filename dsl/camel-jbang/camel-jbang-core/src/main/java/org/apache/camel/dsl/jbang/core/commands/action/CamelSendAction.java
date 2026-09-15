@@ -39,7 +39,7 @@ import org.apache.camel.dsl.jbang.core.commands.CamelJBangMain;
 import org.apache.camel.dsl.jbang.core.commands.MavenResolverMixin;
 import org.apache.camel.dsl.jbang.core.commands.Run;
 import org.apache.camel.dsl.jbang.core.common.CommandLineHelper;
-import org.apache.camel.dsl.jbang.core.common.PathUtils;
+import org.apache.camel.dsl.jbang.export.common.PathUtils;
 import org.apache.camel.main.KameletMain;
 import org.apache.camel.util.StringHelper;
 import org.apache.camel.util.TimeUtils;

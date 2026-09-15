@@ -31,7 +31,7 @@ import com.github.freva.asciitable.Column;
 import com.github.freva.asciitable.HorizontalAlign;
 import com.github.freva.asciitable.OverflowBehaviour;
 import org.apache.camel.dsl.jbang.core.commands.CamelJBangMain;
-import org.apache.camel.dsl.jbang.core.common.PathUtils;
+import org.apache.camel.dsl.jbang.export.common.PathUtils;
 import org.apache.camel.support.PatternHelper;
 import org.apache.camel.util.URISupport;
 import org.apache.camel.util.json.JsonArray;

@@ -22,14 +22,14 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 
 import org.apache.camel.dsl.jbang.core.commands.action.CamelLoadAction;
-import org.apache.camel.dsl.jbang.core.common.PathUtils;
+import org.apache.camel.dsl.jbang.export.common.PathUtils;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import picocli.CommandLine;
 
-import static org.apache.camel.dsl.jbang.core.common.RuntimeUtil.getPid;
+import static org.apache.camel.dsl.jbang.export.common.RuntimeUtil.getPid;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.awaitility.Awaitility.await;
 

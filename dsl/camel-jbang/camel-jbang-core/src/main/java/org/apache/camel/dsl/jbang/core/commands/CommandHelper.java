@@ -25,8 +25,8 @@ import java.util.Scanner;
 import java.util.stream.Stream;
 
 import org.apache.camel.dsl.jbang.core.common.EnvironmentHelper;
-import org.apache.camel.dsl.jbang.core.common.PathUtils;
-import org.apache.camel.dsl.jbang.core.common.Printer;
+import org.apache.camel.dsl.jbang.export.common.PathUtils;
+import org.apache.camel.dsl.jbang.export.common.Printer;
 import org.jline.terminal.Terminal;
 
 public final class CommandHelper {

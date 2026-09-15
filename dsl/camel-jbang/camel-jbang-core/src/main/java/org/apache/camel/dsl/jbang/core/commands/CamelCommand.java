@@ -26,9 +26,9 @@ import java.util.Stack;
 import java.util.concurrent.Callable;
 
 import org.apache.camel.dsl.jbang.core.common.CommandLineHelper;
-import org.apache.camel.dsl.jbang.core.common.Printer;
-import org.apache.camel.dsl.jbang.core.common.RuntimeUtil;
 import org.apache.camel.dsl.jbang.core.common.TerminalWidthHelper;
+import org.apache.camel.dsl.jbang.export.common.Printer;
+import org.apache.camel.dsl.jbang.export.common.RuntimeUtil;
 import org.apache.camel.util.StringHelper;
 import picocli.CommandLine;
 import picocli.CommandLine.IParameterConsumer;

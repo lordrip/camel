@@ -20,7 +20,7 @@ import java.io.IOException;
 import java.io.UncheckedIOException;
 
 import org.apache.camel.dsl.jbang.core.common.CommandLineHelper;
-import org.apache.camel.dsl.jbang.core.common.Printer;
+import org.apache.camel.dsl.jbang.export.common.Printer;
 
 /**
  * Central read/write for the Camel TUI's per-user preferences ({@code camel.tui.*}) across the Camel CLI configuration
